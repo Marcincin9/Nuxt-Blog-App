@@ -4,33 +4,31 @@
       <h1>Get the latest tech news</h1>
     </section>
     <section class="featured-posts">
-      <nuxt-link :to="'/posts/' + 1" class="post-preview">
-      <article>
-          <div class="post-thumbnail" style="background-image: url('https://d26519lbsgqyxd.cloudfront.net/dashboard/wp-content/uploads/2021/02/11155557/lightbulb-illuminating-floor-background.jpg')"></div>
-          <div class="post-content">
-            <h1>Post Title 1</h1>
-            <p>Preview text 1</p>
-          </div>
-      </article>
-      </nuxt-link>
-
-      <nuxt-link :to="'/posts/' + 2" class="post-preview">
-      <article>
-          <div class="post-thumbnail" style="background-image: url('https://d26519lbsgqyxd.cloudfront.net/dashboard/wp-content/uploads/2021/02/11155557/lightbulb-illuminating-floor-background.jpg')"></div>
-          <div class="post-content">
-            <h1>Post Title 2</h1>
-            <p>Preview text 2</p>
-          </div>
-      </article>
-      </nuxt-link>
+        <PostPreview 
+        id="1"
+        thumbnail="https://d26519lbsgqyxd.cloudfront.net/dashboard/wp-content/uploads/2021/02/11155557/lightbulb-illuminating-floor-background.jpg"
+        title="Hello there !!"
+        previewText="This my first post"/>
+        <PostPreview  
+        id="2"
+        thumbnail="https://d26519lbsgqyxd.cloudfront.net/dashboard/wp-content/uploads/2021/02/11155557/lightbulb-illuminating-floor-background.jpg"
+        title="Hello there - secound!!"
+        previewText="This my first post"/>
+        <PostPreview  
+        id="3"
+        thumbnail="https://d26519lbsgqyxd.cloudfront.net/dashboard/wp-content/uploads/2021/02/11155557/lightbulb-illuminating-floor-background.jpg"
+        title="Hello there - last!!"
+        previewText="This my first post"/>
     </section>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/NuxtLogo.vue'
+import PostPreview from '@/components/Posts/PostPreview.vue'
 export default {
- 
+ components: {
+   PostPreview
+ }
  
 }
 </script>
@@ -76,39 +74,5 @@ export default {
   justify-content: center;
 }
 
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
-}
 </style>
